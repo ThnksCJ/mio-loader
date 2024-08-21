@@ -1,0 +1,32 @@
+{
+	"schemaVersion": 1,
+	"id": "mioloader",
+	"version": "2.0",
+	"name": "mioclient.me loader",
+	"description": "",
+	"authors": [
+		"mrnv"
+	],
+	"contact": {
+		"homepage": "https://mioclient.me/"
+	},
+	"license": ["Allah will curse you if you try to crack this client"],
+	"icon": "assets/mioloader/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"main": [
+			"me.mioclient.loader.EntryPoint"
+		],
+		"client": [
+			"me.mioclient.loader.EntryPoint"
+		],
+		"preLaunch": [
+			"com.llamalad7.mixinextras.MixinExtrasBootstrap::init",
+			"me.mioclient.loader.Plugin"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.15.0",
+		"minecraft": "~1.20.4"
+	}
+}
