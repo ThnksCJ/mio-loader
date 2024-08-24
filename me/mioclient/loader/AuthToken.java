@@ -1,5 +1,5 @@
 /*
- * Decompiled with CFR 0.152.
+ * Decompiled by jadyen.dev. With love from nick and thnkscj
  */
 package me.mioclient.loader;
 
@@ -7,26 +7,23 @@ import java.io.File;
 import java.io.FileInputStream;
 
 public class AuthToken {
-    private static /* synthetic */ int field262;
-    private static /* synthetic */ int field263;
-
     public static boolean exists() {
         block4: {
             FileInputStream fileInputStream = null;
             File file = new File(System.getProperty("user.home") + File.separator + "Mio" + File.separator + ".authtoken");
             if (!file.exists()) {
-                boolean bl = false;
+                boolean bl2 = false;
                 if (fileInputStream != null) {
                     fileInputStream.close();
                 }
-                return bl;
+                return bl2;
             }
             if (file.length() <= c) {
-                boolean bl = false;
+                boolean bl3 = false;
                 if (fileInputStream != null) {
                     fileInputStream.close();
                 }
-                return bl;
+                return bl3;
             }
             fileInputStream = new FileInputStream(file);
             fileInputStream.readAllBytes();

@@ -1,5 +1,5 @@
 /*
- * Decompiled with CFR 0.152.
+ * Decompiled by jadyen.dev. With love from nick and thnkscj
  */
 package me.mioclient.loader;
 
@@ -8,9 +8,6 @@ import me.mioclient.loader.MioCustomClassLoader;
 import me.mioclient.loader.Plugin;
 
 public class KnotLoaderSwap {
-    private static /* synthetic */ int field346;
-    private static /* synthetic */ int field347;
-
     public MioCustomClassLoader hotswap() {
         ClassLoader classLoader = Plugin.class.getClassLoader();
         Field field = classLoader.getClass().getDeclaredField("delegate");

@@ -1,5 +1,5 @@
 /*
- * Decompiled with CFR 0.152.
+ * Decompiled by jadyen.dev. With love from nick and thnkscj
  * 
  * Could not load the following classes:
  *  org.apache.logging.log4j.LogManager
@@ -14,8 +14,6 @@ import org.apache.logging.log4j.Logger;
 
 public class Globals {
     private static Logger logger = LogManager.getLogger((String)"turboloader");
-    private static /* synthetic */ int field42;
-    private static /* synthetic */ int field43;
 
     /*
      * Enabled force condition propagation

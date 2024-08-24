@@ -1,5 +1,5 @@
 /*
- * Decompiled with CFR 0.152.
+ * Decompiled by jadyen.dev. With love from nick and thnkscj
  */
 package me.mioclient.loader;
 
@@ -13,11 +13,6 @@ import me.mioclient.loader.Globals;
 
 public class CompatibilityCheck {
     private static boolean exists;
-    private static final String[] b;
-    private static final String[] c;
-    public static final int[][] d;
-    private static /* synthetic */ int field268;
-    private static /* synthetic */ int field269;
 
     /*
      * Enabled aggressive block sorting
@@ -37,12 +32,12 @@ public class CompatibilityCheck {
         exists = true;
         File file = new File(System.getProperty("user.home") + File.separator + "Mio" + File.separator + "mod_warnings_disabled");
         FileOutputStream fileOutputStream = null;
-        boolean bl = false;
+        boolean bl2 = false;
         fileOutputStream = new FileOutputStream(file);
         fileOutputStream.write("Delete this file to turn mod warnings back on".getBytes(StandardCharsets.UTF_8));
-        bl = true;
+        bl2 = true;
         fileOutputStream.close();
-        if (!bl) return;
+        if (!bl2) return;
         Globals.printWarn("Disabled mod warnings. You can enable them back on by deleting file " + file.getAbsolutePath());
     }
 

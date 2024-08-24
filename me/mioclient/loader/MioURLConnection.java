@@ -1,5 +1,5 @@
 /*
- * Decompiled with CFR 0.152.
+ * Decompiled by jadyen.dev. With love from nick and thnkscj
  */
 package me.mioclient.loader;
 
@@ -11,13 +11,7 @@ import me.mioclient.loader.MioInputStream;
 public class MioURLConnection
 extends URLConnection {
     private byte[] a;
-    private static /* synthetic */ int field226;
-    private static /* synthetic */ int field227;
 
-    /*
-     * Enabled force condition propagation
-     * Lifted jumps to return sites
-     */
     public MioURLConnection(URL uRL, byte[] byArray) {
         super(uRL);
         this.a = byArray;

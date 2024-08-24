@@ -1,13 +1,11 @@
 /*
- * Decompiled with CFR 0.152.
+ * Decompiled by jadyen.dev. With love from nick and thnkscj
  */
 package me.mioclient.loader;
 
 public class InvalidSizeException
 extends RuntimeException {
     private String a;
-    private static /* synthetic */ int field20;
-    private static /* synthetic */ int field21;
 
     /*
      * Enabled force condition propagation

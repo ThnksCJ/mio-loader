@@ -1,5 +1,5 @@
 /*
- * Decompiled with CFR 0.152.
+ * Decompiled by jadyen.dev. With love from nick and thnkscj
  */
 package me.mioclient.loader;
 
@@ -9,12 +9,6 @@ import java.util.Locale;
 import me.mioclient.loader.MioLoaderJar;
 
 public class LauncherUtil {
-    private static final String[] a;
-    private static final String[] b;
-    public static final int[][] c;
-    private static /* synthetic */ int field266;
-    private static /* synthetic */ int field267;
-
     public static String getNonSupported() {
         String string = null;
         string = MioLoaderJar.getCurrentPath().getAbsolutePath();

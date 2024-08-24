@@ -1,5 +1,5 @@
 /*
- * Decompiled with CFR 0.152.
+ * Decompiled by jadyen.dev. With love from nick and thnkscj
  * 
  * Could not load the following classes:
  *  net.fabricmc.loader.impl.launch.knot.Knot
@@ -26,12 +26,6 @@ extends SecureClassLoader {
     private Map a = new HashMap();
     private Map b = new HashMap();
     private Map c = new HashMap();
-    private static final String g;
-    private static final long[] h;
-    private static final Integer[] i;
-    public static final int[][] j;
-    private static /* synthetic */ int field340;
-    private static /* synthetic */ int field341;
 
     /*
      * Enabled force condition propagation
@@ -96,8 +90,12 @@ extends SecureClassLoader {
         return null;
     }
 
-    private URL a(Object object) {
-        return new URL(null, g, new MioStreamHandler((byte[])object));
+    /*
+     * WARNING - void declaration
+     */
+    private URL createURL(Object object) {
+        void v1;
+        return new URL(null, "mioclient", new MioStreamHandler((byte[])v1));
     }
 }
 

@@ -1,5 +1,5 @@
 /*
- * Decompiled with CFR 0.152.
+ * Decompiled by jadyen.dev. With love from nick and thnkscj
  */
 package me.mioclient.loader;
 
@@ -14,10 +14,6 @@ extends InputStream {
     protected int b;
     protected int c = 0;
     protected int d;
-    private static final long e;
-    public static final int[][] f;
-    private static /* synthetic */ int field230;
-    private static /* synthetic */ int field231;
 
     /*
      * Enabled force condition propagation
@@ -125,17 +121,6 @@ extends InputStream {
 
     @Override
     public void close() {
-    }
-
-    /*
-     * Enabled aggressive block sorting
-     */
-    static {
-        field230 = 0xED5 ^ 0xFFFFD4FD;
-        field231 = 0xFFFFF7F9 ^ 0xFFFFD4FD;
-        f = new int[3][2];
-        long l = 2461971606488647424L;
-        e = 0x58F8ACCFCBDA87FFL ^ l;
     }
 }
 

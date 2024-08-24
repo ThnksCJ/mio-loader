@@ -1,5 +1,5 @@
 /*
- * Decompiled with CFR 0.152.
+ * Decompiled by jadyen.dev. With love from nick and thnkscj
  * 
  * Could not load the following classes:
  *  net.fabricmc.loader.api.ModContainer
@@ -23,13 +23,6 @@ import net.fabricmc.loader.api.ModContainer;
 import net.fabricmc.loader.impl.FabricLoaderImpl;
 
 public class MioShitter {
-    private static final String[] a;
-    private static final String[] b;
-    private static final long c;
-    public static final int[][] d;
-    private static /* synthetic */ int field224;
-    private static /* synthetic */ int field225;
-
     /*
      * Enabled force condition propagation
      * Lifted jumps to return sites

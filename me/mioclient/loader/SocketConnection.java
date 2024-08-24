@@ -1,5 +1,5 @@
 /*
- * Decompiled with CFR 0.152.
+ * Decompiled by jadyen.dev. With love from nick and thnkscj
  * 
  * Could not load the following classes:
  *  mc.mioclient.loader.gson.C
@@ -33,7 +33,6 @@ import net.fabricmc.loader.impl.FabricLoaderImpl;
 
 public class SocketConnection {
     private static final String service = "auth.mioclient.me";
-    private static /* synthetic */ int ez;
 
     /*
      * Enabled force condition propagation
@@ -85,7 +84,7 @@ public class SocketConnection {
         if (n2 == -500 || n2 == 5000022) {
             String string3;
             String string4;
-            C c;
+            C c2;
             Object object;
             Object object2;
             byte[] byArray;
@@ -112,28 +111,28 @@ public class SocketConnection {
             if (!object.b("mods")) {
                 throw new NullPointerException("No mods field");
             }
-            C c2 = object.f("mods");
-            if (!c2.b("required")) {
+            C c3 = object.f("mods");
+            if (!c3.b("required")) {
                 throw new NullPointerException("No required field");
             }
-            if (!c2.b("incompatible")) {
+            if (!c3.b("incompatible")) {
                 throw new NullPointerException("No incompatible field");
             }
-            JsonArray jsonArray = c2.e("required");
-            JsonArray jsonArray2 = c2.e("incompatible");
+            JsonArray jsonArray = c3.e("required");
+            JsonArray jsonArray2 = c3.e("incompatible");
             for (JsonElement jsonElement : jsonArray) {
                 if (!jsonElement.r()) {
                     throw new RuntimeException("Required field is not an object");
                 }
-                c = jsonElement.u();
-                if (!c.b(SocketConnection.a((int)-17575, (int)-22))) {
+                c2 = jsonElement.u();
+                if (!c2.b(SocketConnection.a((int)-17575, (int)-22))) {
                     throw new RuntimeException("Required object doesn't have a required property: internal");
                 }
-                if (!c.b("name")) {
+                if (!c2.b("name")) {
                     throw new RuntimeException("Required object doesn't have a required property: name");
                 }
-                string4 = c.c("internal").e();
-                string3 = c.c("name").e();
+                string4 = c2.c("internal").e();
+                string3 = c2.c("name").e();
                 if (FabricLoaderImpl.INSTANCE.isModLoaded(string4)) continue;
                 throw new InvalidSizeException("Mod '%s' is required for Mio to work.".formatted(string3));
             }
@@ -141,15 +140,15 @@ public class SocketConnection {
                 if (!jsonElement.r()) {
                     throw new RuntimeException("Incompatible field is not an object");
                 }
-                c = jsonElement.u();
-                if (!c.b("internal")) {
+                c2 = jsonElement.u();
+                if (!c2.b("internal")) {
                     throw new RuntimeException("Incompatible object doesn't have a required property: internal");
                 }
-                if (!c.b("name")) {
+                if (!c2.b("name")) {
                     throw new RuntimeException("Incompatible object doesn't have a required property: name");
                 }
-                string4 = c.c("internal").e();
-                string3 = c.c("name").e();
+                string4 = c2.c("internal").e();
+                string3 = c2.c("name").e();
                 if (!FabricLoaderImpl.INSTANCE.isModLoaded(string4)) continue;
                 CompatibilityCheck.a(string3);
             }

@@ -1,11 +1,15 @@
 /*
- * Decompiled with CFR 0.152.
+ * Decompiled by jadyen.dev. With love from nick and thnkscj
  * 
  * Could not load the following classes:
  *  net.fabricmc.loader.impl.FabricLoaderImpl
  */
 package me.mioclient.loader;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -21,21 +25,10 @@ import me.mioclient.loader.InvalidSizeException;
 import me.mioclient.loader.MioLoaderJar;
 import me.mioclient.loader.cW;
 import me.mioclient.loader.cX;
-import me.mioclient.loader.gson.C;
-import me.mioclient.loader.gson.GSONBuilder;
-import me.mioclient.loader.gson.JsonArray;
-import me.mioclient.loader.gson.JsonElement;
 import net.fabricmc.loader.impl.FabricLoaderImpl;
 
 public class AuthHandler {
     private static final String a = "https://mioclient.me/";
-    private static final String[] b;
-    private static final String[] c;
-    private static final long[] d;
-    private static final Integer[] e;
-    public static final int[][] f;
-    private static /* synthetic */ int field222;
-    private static /* synthetic */ int field223;
 
     public static boolean a() {
         File file = MioLoaderJar.getCurrentPath();
@@ -60,33 +53,33 @@ public class AuthHandler {
         if (n == 200) {
             String string2;
             String string3;
-            C c;
-            C c2 = (C)new GSONBuilder().a(httpResponse.body(), C.class);
-            if (!c2.b("mods")) {
+            JsonObject jsonObject;
+            JsonObject jsonObject2 = (JsonObject)new Gson().a(httpResponse.body(), JsonObject.class);
+            if (!jsonObject2.b("mods")) {
                 throw new NullPointerException("No mods field");
             }
-            C c3 = c2.f("mods");
-            if (!c3.b("required")) {
+            JsonObject jsonObject3 = jsonObject2.f("mods");
+            if (!jsonObject3.b("required")) {
                 throw new NullPointerException("No required field");
             }
-            if (!c3.b("incompatible")) {
+            if (!jsonObject3.b("incompatible")) {
                 throw new NullPointerException("No incompatible field");
             }
-            JsonArray jsonArray = c3.e("required");
-            JsonArray jsonArray2 = c3.e("incompatible");
+            JsonArray jsonArray = jsonObject3.e("required");
+            JsonArray jsonArray2 = jsonObject3.e("incompatible");
             for (JsonElement jsonElement : jsonArray) {
                 if (!jsonElement.r()) {
                     throw new RuntimeException("Required field is not an object");
                 }
-                c = jsonElement.u();
-                if (!c.b("internal")) {
+                jsonObject = jsonElement.u();
+                if (!jsonObject.b("internal")) {
                     throw new RuntimeException("Required object doesn't have a required property: internal");
                 }
-                if (!c.b("name")) {
+                if (!jsonObject.b("name")) {
                     throw new RuntimeException("Required object doesn't have a required property: name");
                 }
-                string3 = c.c("internal").e();
-                string2 = c.c("name").e();
+                string3 = jsonObject.c("internal").e();
+                string2 = jsonObject.c("name").e();
                 if (FabricLoaderImpl.INSTANCE.isModLoaded(string3)) continue;
                 throw new InvalidSizeException("Mod '%s' is required for Mio to work.".formatted(string2));
             }
@@ -94,15 +87,15 @@ public class AuthHandler {
                 if (!jsonElement.r()) {
                     throw new RuntimeException("Incompatible field is not an object");
                 }
-                c = jsonElement.u();
-                if (!c.b("internal")) {
+                jsonObject = jsonElement.u();
+                if (!jsonObject.b("internal")) {
                     throw new RuntimeException("Incompatible object doesn't have a required property: internal");
                 }
-                if (!c.b("name")) {
+                if (!jsonObject.b("name")) {
                     throw new RuntimeException("Incompatible object doesn't have a required property: name");
                 }
-                string3 = c.c("internal").e();
-                string2 = c.c("name").e();
+                string3 = jsonObject.c("internal").e();
+                string2 = jsonObject.c("name").e();
                 if (!FabricLoaderImpl.INSTANCE.isModLoaded(string3)) continue;
                 CompatibilityCheck.a(string2);
             }
