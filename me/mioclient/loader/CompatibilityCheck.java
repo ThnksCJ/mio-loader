@@ -14,9 +14,6 @@ import me.mioclient.loader.Globals;
 public class CompatibilityCheck {
     private static boolean exists;
 
-    /*
-     * Enabled aggressive block sorting
-     */
     public static void a(String string) {
         Globals.printWarn("Mod '%s' is incompatible with Mio".formatted(string));
         if (exists) {
@@ -41,12 +38,8 @@ public class CompatibilityCheck {
         Globals.printWarn("Disabled mod warnings. You can enable them back on by deleting file " + file.getAbsolutePath());
     }
 
-    /*
-     * Enabled force condition propagation
-     * Lifted jumps to return sites
-     */
     static {
-        File v7 = new File("System.getProperty('user.home'), File.separator, 'Mio', File.separator, 'mod_warnings_disabled'");
+        File v7 = new File(System.getProperty("user.home") + File.separator + "Mio" + File.separator + "mod_warnings_disabled");
         exists = v7.exists();
     }
 }
